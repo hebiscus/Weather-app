@@ -1,16 +1,3 @@
-async function getWeather() {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=55.6761&lon=12.5683&units=metric&appid=98cf7b78cb1f92c6762b5df863981c84', {mode: 'cors'});
-    const weatherData = await response.json();
-    const cityName = weatherData.name;
-    const weatherDescription = weatherData.weather[0].description;
-    const humidity = weatherData.main
-    // const rainChance = weatherData.main
-    const windSpeed = weatherData.wind.speed;
-    console.log(cityName);
-    console.log(weatherData);
-  }
-
-  getWeather();
 
 async function getCoordinates() {
     const copenhagen = "Copenhagen";
@@ -28,4 +15,41 @@ async function getCoordinates() {
 
   getCoordinates();
 
-//   https://api.openweathermap.org/data/2.5/onecall?lat=55.6761&lon=12.5683&units=metric&exclude={part}&appid={API key}
+export default async function getWeather(location) {
+  const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
+  const inputCity = location;
+  const apiCallEnding = '&units=metric&appid=98cf7b78cb1f92c6762b5df863981c84'
+  const apiCallCOmbined = apiCallBeginning + inputCity + apiCallEnding;
+  const response = await fetch(apiCallCOmbined, {mode: 'cors'});
+  const weatherData = await response.json();
+  const cityName = weatherData.city.name;
+  const weatherTemperature = weatherData.list[0].main.temp;
+  const weatherDescription = weatherData.list[0].weather[0].description;
+  const humidityStat = weatherData.list[0].main.humidity
+  const rainChance = weatherData.list[0].pop
+  const windSpeed = weatherData.list[0].wind.speed;
+  console.log(weatherData);
+  console.log(cityName);
+  console.log(weatherTemperature);
+  console.log(humidityStat);
+  console.log(rainChance);
+  console.log(windSpeed);
+  console.log(weatherDescription);
+
+  return weatherData;
+}
+
+function renderWeatherData() {
+  const input = document.querySelector(".searchInput");
+  let searchedLocation = input.value;
+  if (searchedLocation === '') {
+    searchedLocation = 'copenhagen';
+  }
+  const fetchedWeatherData = getWeather(searchedLocation);
+}
+
+renderWeatherData();
+
+function renderView() {
+
+}

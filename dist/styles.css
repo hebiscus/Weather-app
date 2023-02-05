@@ -21,3 +21,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
+
+#content {
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+}
