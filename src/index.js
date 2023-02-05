@@ -45,7 +45,12 @@ function renderWeatherData() {
   if (searchedLocation === '') {
     searchedLocation = 'copenhagen';
   }
-  const fetchedWeatherData = getWeather(searchedLocation);
+  const fetchedWeatherData = async () => {
+    const data = await getWeather(searchedLocation);
+  } 
+  // const fetchedWeatherData = getWeather(searchedLocation).then();
+  console.log(fetchedWeatherData)
+  const cityName = "huh";
 }
 
 renderWeatherData();
