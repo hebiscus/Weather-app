@@ -39,21 +39,23 @@ export default async function getWeather(location) {
   return weatherData;
 }
 
-function renderWeatherData() {
-  const input = document.querySelector(".searchInput");
-  let searchedLocation = input.value;
-  if (searchedLocation === '') {
-    searchedLocation = 'copenhagen';
-  }
-  const fetchedWeatherData = async () => {
-    const data = await getWeather(searchedLocation);
-  } 
-  // const fetchedWeatherData = getWeather(searchedLocation).then();
-  console.log(fetchedWeatherData)
-  const cityName = "huh";
+function renderWeatherData(data) {
+  console.log(data);
+  console.log(data.city.name);
+  // const input = document.querySelector(".searchInput");
+  // let searchedLocation = input.value;
+  // if (searchedLocation === '') {
+  //   searchedLocation = 'copenhagen';
+  // }
+  // const fetchedWeatherData = async () => {
+  //   const data = await getWeather(searchedLocation);
+  // } 
+  // // const fetchedWeatherData = getWeather(searchedLocation).then();
+  // console.log(fetchedWeatherData)
+  // const cityName = "huh";
 }
 
-renderWeatherData();
+getWeather("copenhagen").then(renderWeatherData)
 
 function renderView() {
 
