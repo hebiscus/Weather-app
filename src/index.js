@@ -1,19 +1,3 @@
-// async function getCoordinates() {
-//     const copenhagen = "Copenhagen";
-//     const firstPart = "http://api.openweathermap.org/geo/1.0/direct?q=";
-//     const lastPart = "&limit=&appid=98cf7b78cb1f92c6762b5df863981c84"
-//     const combinedFetch = firstPart + copenhagen + lastPart
-//     const response = await fetch(combinedFetch, {mode: 'cors'});
-//     const Data = await response.json();          
-//     const langtitude = Data[0].lat;
-//     const longtitude = Data[0].lon;
-//     console.log(Data);
-//     console.log(langtitude);
-//     console.log(longtitude);
-//   }
-
-//   getCoordinates();
-
 function handleErrors(response) {
   if (!response.ok) {
       throw Error(response.statusText);
@@ -21,6 +5,7 @@ function handleErrors(response) {
   return response;
 }
 
+// eslint-disable-next-line consistent-return
 export default async function getWeather(location) {
   const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
   const inputCity = location;
@@ -43,7 +28,7 @@ export default async function getWeather(location) {
 }
 
 function renderWeatherData(weatherData) {
-  if (weatherData === undefined) {
+  if (weatherData === undefined || weatherData.cod === "400") {
     return;
   }
   const cityName = weatherData.city.name;
