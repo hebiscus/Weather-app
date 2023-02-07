@@ -1,10 +1,9 @@
 import { cloudWeather } from "./cloudWeather";
-import { fogWeather , rainWeather } from "./fogWeather";
+import { fogWeather } from "./fogWeather";
+import { rainWeather } from "./rainWeather"
 import { snowWeather} from "./snowWeather";
 import { stormWeather } from "./stormWeather";
 import { sunWeather } from "./sunWeather";
-
-;
 
 function handleErrors(response) {
   if (!response.ok) {
@@ -39,35 +38,24 @@ function renderWeatherData(weatherData) {
   if (weatherData === undefined || weatherData.cod === "400") {
     return;
   }
-  const cityName = weatherData.city.name;
-  const weatherTemperature = weatherData.list[0].main.temp;
   const weatherStatus = weatherData.list[0].weather[0].main;
-  const weatherDescription = weatherData.list[0].weather[0].description;
-  const humidityStat = weatherData.list[0].main.humidity
-  const rainChance = weatherData.list[0].pop
-  const windSpeed = weatherData.list[0].wind.speed;
-  console.log(weatherData);
-  console.log(cityName);
-  console.log(weatherTemperature);
-  console.log(humidityStat);
-  console.log(rainChance);
-  console.log(windSpeed);
-  console.log(weatherDescription);
   console.log(weatherStatus);
 
-  // if (weatherStatus === "Clouds") {
-  //   cloudWeather.render(weatherData);
-  // } else if (weatherStatus === "Thunderstorm"){
-  //   stormWeather.render(weatherData);
-  // } else if (weatherStatus === "Clear"){
-  //   sunWeather.render(weatherData);
-  // } else if (weatherStatus === "Fog") {
-  //   fogWeather.render(weatherData);
-  // } else if (weatherStatus === "Rain") {
-  //   rainWeather.render(weatherData);
-  // } else if (weatherStatus === "Snow") {
-  //   snowWeather.render(weatherData);
-  // }
+  if (weatherStatus === "Clouds") {
+    cloudWeather.render(weatherData);
+  } else if (weatherStatus === "Thunderstorm"){
+    stormWeather.render(weatherData);
+  } else if (weatherStatus === "Clear"){
+    sunWeather.render(weatherData);
+  } else if (weatherStatus === "Fog") {
+    fogWeather.render(weatherData);
+  } else if (weatherStatus === "Rain") {
+    rainWeather.render(weatherData);
+  } else if (weatherStatus === "Snow") {
+    snowWeather.render(weatherData);
+  } else {
+    console.log("no type");
+  }
 }
 
 (function renderView() {
