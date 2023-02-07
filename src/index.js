@@ -1,27 +1,51 @@
+// async function getCoordinates() {
+//     const copenhagen = "Copenhagen";
+//     const firstPart = "http://api.openweathermap.org/geo/1.0/direct?q=";
+//     const lastPart = "&limit=&appid=98cf7b78cb1f92c6762b5df863981c84"
+//     const combinedFetch = firstPart + copenhagen + lastPart
+//     const response = await fetch(combinedFetch, {mode: 'cors'});
+//     const Data = await response.json();          
+//     const langtitude = Data[0].lat;
+//     const longtitude = Data[0].lon;
+//     console.log(Data);
+//     console.log(langtitude);
+//     console.log(longtitude);
+//   }
 
-async function getCoordinates() {
-    const copenhagen = "Copenhagen";
-    const firstPart = "http://api.openweathermap.org/geo/1.0/direct?q=";
-    const lastPart = "&limit=&appid=98cf7b78cb1f92c6762b5df863981c84"
-    const combinedFetch = firstPart + copenhagen + lastPart
-    const response = await fetch(combinedFetch, {mode: 'cors'});
-    const Data = await response.json();          
-    const langtitude = Data[0].lat;
-    const longtitude = Data[0].lon;
-    console.log(Data);
-    console.log(langtitude);
-    console.log(longtitude);
+//   getCoordinates();
+
+function handleErrors(response) {
+  if (!response.ok) {
+      throw Error(response.statusText);
   }
-
-  getCoordinates();
+  return response;
+}
 
 export default async function getWeather(location) {
   const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
   const inputCity = location;
   const apiCallEnding = '&units=metric&appid=98cf7b78cb1f92c6762b5df863981c84'
-  const apiCallCOmbined = apiCallBeginning + inputCity + apiCallEnding;
-  const response = await fetch(apiCallCOmbined, {mode: 'cors'});
-  const weatherData = await response.json();
+  const apiCallCombined = apiCallBeginning + inputCity + apiCallEnding;
+  try {
+    const response = await fetch(apiCallCombined, {mode: 'cors'})
+    if (response.status === 404) {
+      const err = new Error(`HTTP status code: ${response.status}`);
+      err.response = response;
+      err.status = response.status;
+      throw err;
+    }
+    const weatherData = await response.json();
+    return weatherData;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+function renderWeatherData(weatherData) {
+  if (weatherData === undefined) {
+    return;
+  }
   const cityName = weatherData.city.name;
   const weatherTemperature = weatherData.list[0].main.temp;
   const weatherDescription = weatherData.list[0].weather[0].description;
@@ -35,28 +59,12 @@ export default async function getWeather(location) {
   console.log(rainChance);
   console.log(windSpeed);
   console.log(weatherDescription);
-
-  return weatherData;
 }
 
-function renderWeatherData(data) {
-  console.log(data);
-  console.log(data.city.name);
-  // const input = document.querySelector(".searchInput");
-  // let searchedLocation = input.value;
-  // if (searchedLocation === '') {
-  //   searchedLocation = 'copenhagen';
-  // }
-  // const fetchedWeatherData = async () => {
-  //   const data = await getWeather(searchedLocation);
-  // } 
-  // // const fetchedWeatherData = getWeather(searchedLocation).then();
-  // console.log(fetchedWeatherData)
-  // const cityName = "huh";
-}
+(function renderView() {
+  const searchInput = document.querySelector(".searchInput");
+  searchInput.addEventListener("search", () => {getWeather(searchInput.value).then(renderWeatherData, handleErrors)});
+})();
 
-getWeather("copenhagen").then(renderWeatherData)
 
-function renderView() {
 
-}
