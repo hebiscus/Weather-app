@@ -1,3 +1,11 @@
+import { cloudWeather } from "./cloudWeather";
+import { fogWeather , rainWeather } from "./fogWeather";
+import { snowWeather} from "./snowWeather";
+import { stormWeather } from "./stormWeather";
+import { sunWeather } from "./sunWeather";
+
+;
+
 function handleErrors(response) {
   if (!response.ok) {
       throw Error(response.statusText);
@@ -6,7 +14,7 @@ function handleErrors(response) {
 }
 
 // eslint-disable-next-line consistent-return
-export default async function getWeather(location) {
+async function getWeather(location) {
   const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
   const inputCity = location;
   const apiCallEnding = '&units=metric&appid=98cf7b78cb1f92c6762b5df863981c84'
@@ -33,6 +41,7 @@ function renderWeatherData(weatherData) {
   }
   const cityName = weatherData.city.name;
   const weatherTemperature = weatherData.list[0].main.temp;
+  const weatherStatus = weatherData.list[0].weather[0].main;
   const weatherDescription = weatherData.list[0].weather[0].description;
   const humidityStat = weatherData.list[0].main.humidity
   const rainChance = weatherData.list[0].pop
@@ -44,6 +53,21 @@ function renderWeatherData(weatherData) {
   console.log(rainChance);
   console.log(windSpeed);
   console.log(weatherDescription);
+  console.log(weatherStatus);
+
+  // if (weatherStatus === "Clouds") {
+  //   cloudWeather.render(weatherData);
+  // } else if (weatherStatus === "Thunderstorm"){
+  //   stormWeather.render(weatherData);
+  // } else if (weatherStatus === "Clear"){
+  //   sunWeather.render(weatherData);
+  // } else if (weatherStatus === "Fog") {
+  //   fogWeather.render(weatherData);
+  // } else if (weatherStatus === "Rain") {
+  //   rainWeather.render(weatherData);
+  // } else if (weatherStatus === "Snow") {
+  //   snowWeather.render(weatherData);
+  // }
 }
 
 (function renderView() {
@@ -51,5 +75,8 @@ function renderWeatherData(weatherData) {
   searchInput.addEventListener("search", () => {getWeather(searchInput.value).then(renderWeatherData, handleErrors)});
 })();
 
+(function renderFirstLocation() {
+  getWeather("Copenhagen").then(renderWeatherData);
+})();
 
 
