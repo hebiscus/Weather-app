@@ -25,5 +25,11 @@ time, mark, audio, video {
 #content {
 	height: 100vh;
 	width: 100vw;
+}
+
+.cloud-grid {
+	background-image: url("background-pictures/cloudy.jpg");
 	display: grid;
+	grid-template-columns: 1fr 20% 10% 20%;
+	grid-template-rows: 1fr;
 }
