@@ -59,7 +59,7 @@ function renderWeatherData(weatherData) {
 }
 
 (function renderView() {
-  const searchInput = document.querySelector(".searchInput");
+  const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("search", () => {getWeather(searchInput.value).then(renderWeatherData, handleErrors)});
 })();
 
