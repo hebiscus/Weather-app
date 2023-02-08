@@ -5,6 +5,7 @@ export const cloudWeather = {
         content.classList = "";
         content.replaceChildren();
         content.classList.add("cloud-grid");
+        
 
         const cityName = weatherData.city.name;
         const weatherTemperature = weatherData.list[0].main.temp;
