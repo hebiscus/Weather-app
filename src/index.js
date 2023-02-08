@@ -58,10 +58,12 @@ function renderWeatherData(weatherData) {
   }
 }
 
-(function renderView() {
+export function renderView() {
   const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("search", () => {getWeather(searchInput.value).then(renderWeatherData, handleErrors)});
-})();
+}
+
+renderView();
 
 (function renderFirstLocation() {
   getWeather("Copenhagen").then(renderWeatherData);

@@ -1,3 +1,4 @@
+import { renderView } from "./index";
 
 export const cloudWeather = {
     render: (weatherData) => {
@@ -27,5 +28,6 @@ export const cloudWeather = {
         secondaryBox.append(humidityStat, rainChance, windSpeed);
         content.append(inputSearch, mainBox, secondaryBox);
         console.log(cityName);
+        renderView();
     }
 }

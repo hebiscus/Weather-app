@@ -32,7 +32,7 @@ time, mark, audio, video {
 	background-size: 100vw 100vh;
 	display: grid;
 	grid-template-columns: 1fr 15% 15% 20%;
-	grid-template-rows: 8% 20% 15% 1fr;
+	grid-template-rows: 8% 10% 15% 1fr;
 }
 
 .search-cloud {
@@ -43,9 +43,12 @@ time, mark, audio, video {
 .main-cloud {
 	grid-column: 2 / 3 ;
 	grid-row: 3 / 3;
+	display: flex;
+	flex-direction: column;
 }
 
 .secondary-cloud {
 	grid-column: 2 / 3 ;
 	grid-row: 3 / 3;
+	display: flex;
 }
