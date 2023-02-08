@@ -15,17 +15,17 @@ export const cloudWeather = {
         const windSpeed = weatherData.list[0].wind.speed;
 
         const nameP = document.createElement("p");
-        nameP.innerText = cityName;
+        nameP.innerText = cityName.toUpperCase();
         const temperatureP = document.createElement("p");
-        temperatureP.innerText = `${weatherTemperature} °C`
+        temperatureP.innerText = `${weatherTemperature}°C`
         const descriptionP = document.createElement("p");
         descriptionP.innerText = weatherDescription;
         const humidityP = document.createElement("p");
-        humidityP.innerText = humidityStat;
+        humidityP.innerText = `${humidityStat}%`;
         const rainP = document.createElement("p");
-        rainP.innerText = rainChance;
+        rainP.innerText = `${rainChance}%`;
         const windP = document.createElement("p");
-        windP.innerText = windSpeed;
+        windP.innerText = `${windSpeed}km/h`;
        
         const inputSearch = document.createElement("input");
         inputSearch.setAttribute("type", "search");
