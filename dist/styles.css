@@ -1,5 +1,5 @@
 * {
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -28,21 +28,29 @@ time, mark, audio, video {
 }
 
 #searchInput {
-	height: 55%;
+
 }
 
 .cloud-grid {
 	background-image: url("background-pictures/cloudy.jpg");
 	background-size: 100vw 100vh;
 	display: grid;
-	grid-template-columns: 1fr 16% 10% 8% 20%;
-    grid-template-rows: 8% 4% 15% 9% 1fr;
+	grid-template-columns: 1fr 8% 19% 8% 16%;
+    grid-template-rows: 8% 4% 20% 9% 1fr;
 }
 
 .search-cloud {
+	height: 50%;
+	width: 85%;
  	grid-column: 5 ;
  	grid-row: 1;
 	margin-top: 3%;
+	margin-right: 3%;
+	border-radius: 5px;
+    border: 2px solid;
+	background: #bccce152;
+	justify-self: flex-end;
+	font-size: 1.8rem;
 }
 
 .main-cloud {
@@ -63,7 +71,11 @@ time, mark, audio, video {
 }
 
 .secondary-cloud {
-	grid-column: 3 / 5;
+	grid-column: 3 / 6;
     grid-row: 4;
 	display: flex;
+	font-size: 2.1rem;
+	flex-wrap: wrap;
+    gap: 3.5%;
 }
+
