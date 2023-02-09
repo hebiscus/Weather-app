@@ -127,7 +127,232 @@ time, mark, audio, video {
 	font-size: 4.9rem;
 }
 
-.secondary-rain {
+.snow-grid {
+	background-image: url("background-pictures/snow.jpg");
+	background-size: 100vw 100vh;
+	display: grid;
+	grid-template-columns: 1fr 5% 11% 8% 16%;
+    grid-template-rows: 1fr 1% 20% 21% 9%;
+}
+
+.search-snow {
+	height: 42%;
+	width: 85%;
+ 	grid-column: 5;
+ 	grid-row: 5;
+	margin-right: 3%;
+	margin-bottom: 3%;
+	border-radius: 7px;
+    border: 2px solid;
+	background: #d7edfffc;
+	justify-self: flex-end;
+	font-size: 1.8rem;
+	align-self: flex-end;
+}
+
+.main-snow {
+	grid-column: 2 / 4 ;
+	grid-row: 3 / 3;
+	display: flex;
+	flex-direction: column;
+	font-size: 2.3rem;
+	color: white;
+}
+
+.main-snow > p:nth-child(2) {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.main-snow > p:first-of-type {
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.main-snow > p {
+	text-shadow: 4px 4px rgba(0, 0, 0, 1);
+}
+
+.main-snow > p:last-child {
+	font-size: 4.9rem;
+}
+
+.secondary-snow {
+	grid-column: 3 / 6;
+    grid-row: 4;
+	display: flex;
+	font-size: 1.9rem;
+	flex-wrap: wrap;
+    gap: 3.5%;
+	color: black;
+}
+
+.storm-grid {
+	background-image: url("background-pictures/rain.jpg");
+	background-size: 100vw 100vh;
+	display: grid;
+	grid-template-columns: 1fr 3% 34% 8% 16%;
+    grid-template-rows: 8% 25% 20% 9% 1fr;
+}
+
+.search-storm {
+	height: 50%;
+	width: 85%;
+ 	grid-column: 5 ;
+ 	grid-row: 1;
+	margin-top: 3%;
+	margin-right: 3%;
+	border-radius: 5px;
+    border: 2px solid;
+	background: #abc9b2ab;
+	justify-self: flex-end;
+	font-size: 1.8rem;
+}
+
+.main-storm {
+	grid-column: 2 / 4 ;
+	grid-row: 3 / 3;
+	display: flex;
+	flex-direction: column;
+	font-size: 2.3rem;
+	color: white;
+}
+
+.main-storm > p:nth-child(2) {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.main-storm > p:first-of-type {
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.main-storm > p {
+	text-shadow: 4px 4px rgba(0, 0, 0, 1);
+}
+
+.main-storm > p:last-child {
+	font-size: 4.9rem;
+}
+
+.secondary-clear {
+	grid-column: 3 / 6;
+    grid-row: 4;
+	display: flex;
+	font-size: 1.9rem;
+	flex-wrap: wrap;
+    gap: 3.5%;
+	color: white;
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.clear-grid {
+	background-image: url("background-pictures/rain.jpg");
+	background-size: 100vw 100vh;
+	display: grid;
+	grid-template-columns: 1fr 3% 34% 8% 16%;
+    grid-template-rows: 8% 25% 20% 9% 1fr;
+}
+
+.search-clear {
+	height: 50%;
+	width: 85%;
+ 	grid-column: 5 ;
+ 	grid-row: 1;
+	margin-top: 3%;
+	margin-right: 3%;
+	border-radius: 5px;
+    border: 2px solid;
+	background: #abc9b2ab;
+	justify-self: flex-end;
+	font-size: 1.8rem;
+}
+
+.main-clear {
+	grid-column: 2 / 4 ;
+	grid-row: 3 / 3;
+	display: flex;
+	flex-direction: column;
+	font-size: 2.3rem;
+	color: white;
+}
+
+.main-clear > p:nth-child(2) {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.main-clear > p:first-of-type {
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.main-clear > p {
+	text-shadow: 4px 4px rgba(0, 0, 0, 1);
+}
+
+.main-clear > p:last-child {
+	font-size: 4.9rem;
+}
+
+.secondary-fog {
+	grid-column: 3 / 6;
+    grid-row: 4;
+	display: flex;
+	font-size: 1.9rem;
+	flex-wrap: wrap;
+    gap: 3.5%;
+	color: white;
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.fog-grid {
+	background-image: url("background-pictures/rain.jpg");
+	background-size: 100vw 100vh;
+	display: grid;
+	grid-template-columns: 1fr 3% 34% 8% 16%;
+    grid-template-rows: 8% 25% 20% 9% 1fr;
+}
+
+.search-fog {
+	height: 50%;
+	width: 85%;
+ 	grid-column: 5 ;
+ 	grid-row: 1;
+	margin-top: 3%;
+	margin-right: 3%;
+	border-radius: 5px;
+    border: 2px solid;
+	background: #abc9b2ab;
+	justify-self: flex-end;
+	font-size: 1.8rem;
+}
+
+.main-fog {
+	grid-column: 2 / 4 ;
+	grid-row: 3 / 3;
+	display: flex;
+	flex-direction: column;
+	font-size: 2.3rem;
+	color: white;
+}
+
+.main-fog > p:nth-child(2) {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.main-fog > p:first-of-type {
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.main-fog > p {
+	text-shadow: 4px 4px rgba(0, 0, 0, 1);
+}
+
+.main-fog > p:last-child {
+	font-size: 4.9rem;
+}
+
+.secondary-fog {
 	grid-column: 3 / 6;
     grid-row: 4;
 	display: flex;
