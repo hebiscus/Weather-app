@@ -21,19 +21,23 @@ export const rainWeather = {
         const descriptionP = document.createElement("p");
         descriptionP.innerText = weatherDescription;
         const humidityP = document.createElement("p");
-        humidityP.innerText = `${humidityStat}%`;
+        humidityP.innerText = `Humidity:
+        ${humidityStat}%`;
         const rainP = document.createElement("p");
-        rainP.innerText = `${rainChance}%`;
+        rainP.innerText = `Rain chance:
+        ${rainChance}%`;
         const windP = document.createElement("p");
-        windP.innerText = `${windSpeed}km/h`;
+        windP.innerText = `Wind speed:
+        ${windSpeed}km/h`;
        
         const inputSearch = document.createElement("input");
         inputSearch.setAttribute("type", "search");
         inputSearch.setAttribute("id", "searchInput");
+        inputSearch.setAttribute("placeholder", "Search location");
         inputSearch.classList.add("search-rain");
 
         const mainBox = document.createElement("div");
-        mainBox.classList.add("main-cloud");
+        mainBox.classList.add("main-rain");
         const secondaryBox = document.createElement("div");
         secondaryBox.classList.add("secondary-rain");
 
