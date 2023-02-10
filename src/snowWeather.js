@@ -30,7 +30,6 @@ export const snowWeather = {
         windP.innerText = `Wind speed:
         ${windSpeed} km/h`;
        
-       
         const inputSearch = document.createElement("input");
         inputSearch.setAttribute("type", "search");
         inputSearch.setAttribute("id", "searchInput");

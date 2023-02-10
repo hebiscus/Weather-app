@@ -50,7 +50,6 @@ function renderWeatherData(weatherData) {
     return;
   }
   const weatherStatus = weatherData.list[0].weather[0].main;
-  console.log(weatherStatus);
 
   if (weatherStatus === "Clouds") {
     cloudWeather.render(weatherData);
