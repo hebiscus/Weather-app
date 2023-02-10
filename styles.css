@@ -27,8 +27,14 @@ time, mark, audio, video {
 	width: 100vw;
 }
 
-#searchInput {
-
+.error-text {
+	grid-column: 5;
+	grid-row: 1;
+    align-self: end;
+    justify-self: end;
+    margin-right: 3%;
+    font-size: 1.2rem;
+    color: #d50029;
 }
 
 .cloud-grid {
@@ -316,7 +322,7 @@ time, mark, audio, video {
 }
 
 .fog-grid {
-	background-image: url("background-pictures/rain.jpg");
+	background-image: url("background-pictures/fog.jpg");
 	background-size: 100vw 100vh;
 	display: grid;
 	grid-template-columns: 1fr 3% 34% 8% 16%;
