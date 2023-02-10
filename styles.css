@@ -127,6 +127,17 @@ time, mark, audio, video {
 	font-size: 4.9rem;
 }
 
+.secondary-rain {
+	grid-column: 3 / 6;
+    grid-row: 4;
+	display: flex;
+	font-size: 1.9rem;
+	flex-wrap: wrap;
+    gap: 3.5%;
+	color: white;
+	text-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
 .snow-grid {
 	background-image: url("background-pictures/snow.jpg");
 	background-size: 100vw 100vh;
@@ -186,19 +197,19 @@ time, mark, audio, video {
 	color: black;
 }
 
-.storm-grid {
+/* .storm-grid {
 	background-image: url("background-pictures/rain.jpg");
 	background-size: 100vw 100vh;
 	display: grid;
-	grid-template-columns: 1fr 3% 34% 8% 16%;
-    grid-template-rows: 8% 25% 20% 9% 1fr;
+	grid-template-columns: 1fr 5% 11% 8% 16%;
+    grid-template-rows: 1fr 1% 20% 21% 9%;
 }
 
 .search-storm {
 	height: 50%;
 	width: 85%;
  	grid-column: 5 ;
- 	grid-row: 1;
+ 	grid-row: 5;
 	margin-top: 3%;
 	margin-right: 3%;
 	border-radius: 5px;
@@ -232,9 +243,9 @@ time, mark, audio, video {
 
 .main-storm > p:last-child {
 	font-size: 4.9rem;
-}
+} */
 
-.secondary-clear {
+/* .secondary-storm {
 	grid-column: 3 / 6;
     grid-row: 4;
 	display: flex;
@@ -243,14 +254,14 @@ time, mark, audio, video {
     gap: 3.5%;
 	color: white;
 	text-shadow: 2px 2px rgba(0, 0, 0, 1);
-}
+} */
 
 .clear-grid {
-	background-image: url("background-pictures/rain.jpg");
+	background-image: url("background-pictures/clear.jpg");
 	background-size: 100vw 100vh;
 	display: grid;
-	grid-template-columns: 1fr 3% 34% 8% 16%;
-    grid-template-rows: 8% 25% 20% 9% 1fr;
+	grid-template-columns: 1fr 5% 36% 8% 16%;
+    grid-template-rows: 7% 4% 20% 9% 1fr;
 }
 
 .search-clear {
@@ -262,7 +273,7 @@ time, mark, audio, video {
 	margin-right: 3%;
 	border-radius: 5px;
     border: 2px solid;
-	background: #abc9b2ab;
+	background: #bfdceba6;
 	justify-self: flex-end;
 	font-size: 1.8rem;
 }
@@ -293,11 +304,11 @@ time, mark, audio, video {
 	font-size: 4.9rem;
 }
 
-.secondary-fog {
+.secondary-clear {
 	grid-column: 3 / 6;
     grid-row: 4;
 	display: flex;
-	font-size: 1.9rem;
+	font-size: 2rem;
 	flex-wrap: wrap;
     gap: 3.5%;
 	color: white;
