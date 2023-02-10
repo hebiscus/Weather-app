@@ -25,7 +25,7 @@ export const fogWeather = {
         const rainP = document.createElement("p");
         rainP.innerText = `${rainChance}%`;
         const windP = document.createElement("p");
-        windP.innerText = `${windSpeed}km/h`;
+        windP.innerText = `${windSpeed} km/h`;
        
         const inputSearch = document.createElement("input");
         inputSearch.setAttribute("type", "search");

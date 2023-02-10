@@ -12,6 +12,16 @@ function handleErrors(response) {
   return response;
 }
 
+function throwError() {
+  const searchInput = document.getElementById("searchInput");
+  if (!document.querySelector(".error-text")) {
+    const errorP = document.createElement("p");
+    errorP.classList.add("error-text")
+    errorP.innerText = "No location found!";
+    searchInput.after(errorP);
+  }
+}
+
 // eslint-disable-next-line consistent-return
 async function getWeather(location) {
   const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
@@ -36,6 +46,7 @@ async function getWeather(location) {
 
 function renderWeatherData(weatherData) {
   if (weatherData === undefined || weatherData.cod === "400") {
+    throwError();
     return;
   }
   const weatherStatus = weatherData.list[0].weather[0].main;
@@ -49,12 +60,12 @@ function renderWeatherData(weatherData) {
     sunWeather.render(weatherData);
   } else if (weatherStatus === "Fog") {
     fogWeather.render(weatherData);
-  } else if (weatherStatus === "Rain") {
+  } else if (weatherStatus === "Rain" || weatherStatus === "Drizzle") {
     rainWeather.render(weatherData);
   } else if (weatherStatus === "Snow") {
     snowWeather.render(weatherData);
   } else {
-    console.log("no type");
+    alert("something went wrong");
   }
 }
 

@@ -28,7 +28,7 @@ export const snowWeather = {
         ${rainChance}%`;
         const windP = document.createElement("p");
         windP.innerText = `Wind speed:
-        ${windSpeed}km/h`;
+        ${windSpeed} km/h`;
        
        
         const inputSearch = document.createElement("input");
