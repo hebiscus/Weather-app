@@ -5,7 +5,7 @@ export const sunWeather = {
         const content = document.getElementById("content");
         content.classList = "";
         content.replaceChildren();
-        content.classList.add("sun-grid");
+        content.classList.add("clear-grid");
         
         const cityName = weatherData.city.name;
         const weatherTemperature = Math.ceil(weatherData.list[0].main.temp);
@@ -21,21 +21,25 @@ export const sunWeather = {
         const descriptionP = document.createElement("p");
         descriptionP.innerText = weatherDescription;
         const humidityP = document.createElement("p");
-        humidityP.innerText = `${humidityStat}%`;
+        humidityP.innerText = `Humidity:
+        ${humidityStat}%`;
         const rainP = document.createElement("p");
-        rainP.innerText = `${rainChance}%`;
+        rainP.innerText = `Rain chance:
+        ${rainChance}%`;
         const windP = document.createElement("p");
-        windP.innerText = `${windSpeed}km/h`;
+        windP.innerText = `Wind speed:
+        ${windSpeed}km/h`;
        
         const inputSearch = document.createElement("input");
         inputSearch.setAttribute("type", "search");
         inputSearch.setAttribute("id", "searchInput");
-        inputSearch.classList.add("search-sun");
+        inputSearch.setAttribute("placeholder", "Search location");
+        inputSearch.classList.add("search-clear");
 
         const mainBox = document.createElement("div");
-        mainBox.classList.add("main-cloud");
+        mainBox.classList.add("main-clear");
         const secondaryBox = document.createElement("div");
-        secondaryBox.classList.add("secondary-sun");
+        secondaryBox.classList.add("secondary-clear");
 
         mainBox.append(descriptionP, nameP, temperatureP);
         secondaryBox.append(humidityP, rainP, windP);
