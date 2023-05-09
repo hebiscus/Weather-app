@@ -24,7 +24,7 @@ function throwError() {
 
 // eslint-disable-next-line consistent-return
 async function getWeather(location) {
-  const apiCallBeginning = 'http://api.openweathermap.org/data/2.5/forecast?q='
+  const apiCallBeginning = 'https://api.openweathermap.org/data/2.5/forecast?q='
   const inputCity = location;
   const apiCallEnding = '&units=metric&appid=98cf7b78cb1f92c6762b5df863981c84'
   const apiCallCombined = apiCallBeginning + inputCity + apiCallEnding;
