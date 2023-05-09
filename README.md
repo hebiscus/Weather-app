@@ -7,7 +7,7 @@ Tools used: JavaScript, HTML, CSS.
 ![image](https://user-images.githubusercontent.com/107350293/218084181-442a385b-6df7-4362-8266-e1fba831742a.png)
 ![image](https://user-images.githubusercontent.com/107350293/218084276-20952bb8-1eb3-4487-9950-e45d993fe206.png)
 # Live preview: 
-
+https://hebiscus.github.io/Weather-app/
 
 # What could be improved:
 - fahrenheits switch
